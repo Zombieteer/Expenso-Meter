@@ -95,15 +95,13 @@ function addToTotal() {
 
 // Delete item
 function deleteItem(e) {
-  document
-    .querySelector(".modal_select")
-    .addEventListener("click", function () {
-      itemToDelete = e.target.parentNode.parentNode.parentNode.parentNode.id;
-      data = data.filter((item) => {
-        return item.id !== itemToDelete;
-      });
-      console.log(data);
-      document.getElementById(itemToDelete).remove();
-      addToTotal();
+  document.querySelector(".modal_yes").addEventListener("click", function () {
+    itemToDelete = e.target.parentNode.parentNode.parentNode.parentNode.id;
+    data = data.filter((item) => {
+      return item.id !== itemToDelete;
     });
+    console.log(data);
+    document.getElementById(itemToDelete).remove();
+    addToTotal();
+  });
 }
